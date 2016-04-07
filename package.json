@@ -19,6 +19,7 @@
   "homepage": "https://github.com/funwork/funwork-webapp#readme",
   "devDependencies": {
     "babel-core": "^6.4.5",
+    "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-polyfill": "^6.3.14",
@@ -49,11 +50,13 @@
     "yargs": "^3.32.0"
   },
   "dependencies": {
+    "autobind-decorator": "^1.3.3",
     "bootstrap": "^3.3.6",
     "bootswatch": "^3.3.6",
     "classnames": "^2.2.3",
     "history": "^1.17.0",
     "moment": "^2.12.0",
+    "rc-tree": "^1.3.0",
     "react": "^0.14.8",
     "react-bootstrap": "^0.28.2",
     "react-dom": "^0.14.8",

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap';
-import Icon from 'react-fa';
 
 export default class Login extends Component {
 

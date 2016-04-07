@@ -20,6 +20,12 @@ export default class HeadNav extends Component {
           <LinkContainer to={{ pathname: '/login' }}>
             <NavItem eventKey={1}>Login</NavItem>
           </LinkContainer>
+          <LinkContainer to={{ pathname: '/organization' }}>
+            <NavItem eventKey={2}>조직도</NavItem>
+          </LinkContainer>
+          <LinkContainer to={{ pathname: '/sns' }}>
+            <NavItem eventKey={3}>SNS</NavItem>
+          </LinkContainer>
         </Nav>
       </Navbar>
     );

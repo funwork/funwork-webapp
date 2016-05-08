@@ -12,11 +12,11 @@ export default class OrganTree extends Component {
     const lb = (data) => {
       return data.map(item => {
         if (item.children) {
-          return (<TreeNode key={item.key} title={item.title}>
+          return (<TreeNode key={item.key} title={item.title} info={item.info} >
             {lb(item.children)}
           </TreeNode>);
         }
-        return <TreeNode key={item.key} title={item.title}/>;
+        return <TreeNode key={item.key} title={item.title} info={item.info} />;
       });
     };
 
@@ -24,8 +24,7 @@ export default class OrganTree extends Component {
       <Tree
         className="organTree"
         showLine
-        defaultExpandedKeys={this.props.defaultExpandedKeys}
-        onExpand={this.props.handleExpand}
+        expandedKeys={this.props.defaultExpandedKeys}
         onSelect={this.props.handleSelect}
       >
         {lb(this.props.organ)}
@@ -35,8 +34,7 @@ export default class OrganTree extends Component {
 }
 
 OrganTree.propTypes = {
-  defaultExpandedKeys: PropTypes.array,
-  handleExpand: PropTypes.func.isRequired,
+  defaultExpandedKeys: PropTypes.array.isRequired,
   handleSelect: PropTypes.func.isRequired,
   organ: PropTypes.array.isRequired
 };

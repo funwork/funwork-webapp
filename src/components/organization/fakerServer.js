@@ -6,24 +6,57 @@ export default class OrganFakerServer {
     return [
       {
         title: 'funwork',
-        key: 'D1',
+        key: 'DEPT1',
+        type: 'DEPT',
+        info: {
+          id: 1
+          // 부서정보
+        },
         children: [
           {
             title: 'OpenSource Team',
-            key: 'D2',
+            key: 'DEPT1-DEPT2',
+            type: 'DEPT',
+            info: {
+              id: 2,
+              parentDeptId: 1
+            },
             children: [
               {
                 title: '오창화',
-                key: 'U1'
+                key: 'DEPT2-USER1',
+                type: 'USER',
+                info: {
+                  id: 'changhwaoh@funwork.io',
+                  position: 'Engineer',
+                  securityGrade: 0,
+                  deptId: 2
+                }
               },
               {
                 title: '유로사리아',
-                key: 'U2'
+                key: 'DEPT2-USER2',
+                type: 'USER',
+                info: {
+                  id: 'urosaria@funwork.io',
+                  position: 'Engineer',
+                  securityGrade: 5,
+                  deptId: 2
+                }
               }
             ]
           }
         ]
       }
     ];
+  }
+
+  static getLoginUser() {
+    return {
+      id: 'changhwaoh@funwork.io',
+      position: 'Engineer',
+      securityGrade: 0,
+      deptId: 2
+    };
   }
 }

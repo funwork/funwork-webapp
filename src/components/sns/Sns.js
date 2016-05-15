@@ -1,14 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { PanelGroup} from 'react-bootstrap';
+import './sns.less';
+import Forms from './SnsForm';
+import Lists from './SnsList';
 
 export default class Sns extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
 
-  render() {
-    return (
-      <div> Hello World </div>
-    );
-  }
+        this.state = {
+            show:true,
+            test:true
+        };
+    }
+
+    render() {
+        return (
+        <PanelGroup id="snsPanel">
+            <Forms />
+            <Lists />
+        </PanelGroup>
+        );
+    }
+
 }

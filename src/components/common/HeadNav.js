@@ -26,6 +26,9 @@ export default class HeadNav extends Component {
           <LinkContainer to={{ pathname: '/sns' }}>
             <NavItem eventKey={3}>SNS</NavItem>
           </LinkContainer>
+          <LinkContainer to={{ pathname: '/sample' }}>
+            <NavItem eventKey={4}>Sample</NavItem>
+          </LinkContainer>
         </Nav>
       </Navbar>
     );

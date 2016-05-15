@@ -1,0 +1,179 @@
+@image_base-url: "/image/sns/";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css";
+
+.imageProfile(@size) {
+  width: @size;
+  height: @size;
+  float: left;
+}
+
+.fileIcon(@top,@left){
+  top: @top;
+  left: @left;
+  float: left;
+  position: relative;
+}
+
+#snsPanel {
+
+  .panel {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+
+    .panel-title {
+      font-size: 12px !important;
+
+      & .profile {
+        .imageProfile(70px);
+      }
+      & p.date {
+        padding: 5px;
+      }
+      & .dept {
+        color: darkgray;
+      }
+
+    }
+
+    .profile {
+      .imageProfile(80px);
+    }
+
+    textarea {
+      max-width: 620px;
+      height: 100px;
+    }
+
+    .fileList {
+      padding-top: 10px;
+
+      & i{
+        .fileIcon(13px,20px);
+      }
+
+      & .fileDropdown{
+        clear:both;
+        & i{
+          .fileIcon(5px,20px);
+        }
+      }
+
+      & >.form-group {
+        & .checkbox{
+          float:left;
+        }
+        left:0;
+      }
+
+      & .form-group {
+        position:relative;
+        left:-10px;
+        margin-bottom: 0;
+        & span {
+          margin-left:15px;
+        }
+      }
+
+      & .glyphicon {
+        top: 12px;
+        cursor:pointer;
+      }
+      hr {
+        margin: 0;
+        clear:both;
+      }
+    }
+
+    .btnArea {
+      max-width: 700px;
+      padding-left:80px;
+      text-align:right;
+
+      p.btnLeft {
+        float: left;
+        .glyphicon {
+          font-size: 24px;
+          padding-right: 5px;
+          vertical-align: middle;
+        }
+      }
+
+      div.btnRight {
+        float:right;
+        width:150px;
+        label {
+          display: none;
+        }
+        .form-group {
+          display :inline;
+        }
+        select {
+          float:left;
+          max-width: 100px;
+          height: 30px;
+        }
+      }
+
+    }
+
+    p.commentCnt {
+      border-bottom: 1px solid #e1e2e3;
+      padding: 5px 10px;
+      text-align: right;
+      color:#3b5998;
+      & span{
+        cursor: pointer;
+      }
+    }
+
+   .commentable {
+      width:100%;
+      margin: 0 auto;
+      padding-bottom: 80px;
+      background-color: #f6f7f8 !important;
+
+      & .commentInsert {
+        float:left;
+        width: 100%;
+        position: relative;
+        top:10px;
+
+        div.profile {
+          .imageProfile(32px)
+        }
+        div.comment {
+          float:left;
+          position: relative;
+          width:90%;
+          left: 10px;
+        }
+      }
+
+      span.commentList{
+        padding-right: 3px;
+        color: #3b5998;
+      }
+    }
+  }
+
+}
+
+.btn-file {
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  > input {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+    filter: alpha(opacity=0);
+    font-size: 23px !important;
+    height: 100% !important;
+    width: 100% !important;
+    direction: ltr !important;
+    cursor: pointer !important;
+  }
+}

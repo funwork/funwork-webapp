@@ -1,14 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 import {render} from 'react-dom';
-import {DefaultRoute, Route, Router} from 'react-router';
-import { Panel, Input, Col, Image} from 'react-bootstrap';
+import {DefaultRoute} from 'react-router';
+import { Well, Panel, Input, Col, Image} from 'react-bootstrap';
 import './sns.less';
 import SnsFileItem from './SnsFileItem';
-import SnsComment from './SnsComment';
+import SnsCommentItem from './SnsCommentItem';
 
 export default class SnsItem extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            fileDetails:false,
+            commentDetails:false
+        }
+        console.log('test'+this.state.fileDetails);
+
     }
 
     render() {
@@ -26,8 +32,38 @@ export default class SnsItem extends Component {
                 <div>
                     {this.props.contents}
 
-                    <SnsFileItem />
-                    <SnsComment />
+                    <div className="fileList">
+                        <i className="fa  fa-folder-open-o" aria-hidden="true"></i><Input type="checkbox" label="첨부파일" />
+
+                        <span className="glyphicon glyphicon-chevron-down" onclick={()=>this.setState({fileDetails: !this.state.fileDetails})}></span>
+                        <hr />
+
+                        <div className="fileDropdown">
+                            {this.props.fileLists.map((contact, i) => {
+                                return (<SnsFileItem fileNum={contact.fileNum}
+                                                     filePath={contact.filePath}
+                                                     fileNm={contact.fileNm}
+                                                     key={i}/>);
+                            })}
+                        </div>
+                    </div>
+
+                    <p className="commentCnt"><span>댓글 {this.props.commentCount}개</span></p>
+                    <Well className="commentable">
+
+                        {this.props.commentList.map((contact, i) => {
+                            return (<SnsCommentItem userId={contact.userId}
+                                                    commentNum={contact.commentNum}
+                                                    contents={contact.contents}
+                                                    key={i}/>);
+                        })}
+
+                        <div className="commentInsert">
+                            <div className="profile"><img width={32} height={32} src="/image/sns/test.jpg" alt="Image" thumbnail /></div>
+                            <div className="comment"><Input type="text" placeholder="Enter text" /></div>
+                        </div>
+
+                    </Well>
                 </div>
             </Panel>
         );
@@ -35,7 +71,8 @@ export default class SnsItem extends Component {
 }
 
 SnsItem.propTypes = {
-    formValue: PropTypes.object
+    formValue: PropTypes.object,
+    fileLists: PropTypes.arrayOf(PropTypes.object)
 }
 
 

@@ -1,13 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import './sns.less';
-import SnsItem from './SnsItem';
+export default class SnsFakerServer {
 
-//snsList 나타내는 컴포넌트
-export default class SnsList extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {}
 
-        this.state = {
+    static getSnsData() {
+        return [
+            {
             snsLists: [
                 {
                     num: 1,
@@ -128,33 +125,8 @@ export default class SnsList extends Component {
                     commentCount:2
                 }
             ]
-        };
-
+            }
+        ];
     }
-
-    render() {
-
-        return (
-            <div>
-                {this.state.snsLists.map((contact, i) => {
-                    return (<SnsItem num={contact.num}
-                                     contents={contact.contents}
-                                     userId={contact.userId}
-                                     date={contact.date}
-                                     dept={contact.dept}
-                                     fileLists={contact.fileLists}
-                                     commentList={contact.commentLists}
-                                     commentCount={contact.commentCount}
-                                     key={i}/>);
-                })}
-            </div>
-
-        );
-    }
+    
 }
-
-SnsList.propTypes = {
-    formValue: PropTypes.object,
-    snsLists: PropTypes.arrayOf(PropTypes.object)
-}
-

@@ -27,7 +27,8 @@ export default class OrganFakerServer {
                 key: 'DEPT2-USER1',
                 type: 'USER',
                 info: {
-                  id: 'changhwaoh@funwork.io',
+                  id: 1,
+                  email: 'changhwaoh@funwork.io',
                   position: 'Engineer',
                   securityGrade: 0,
                   deptId: 2
@@ -38,7 +39,8 @@ export default class OrganFakerServer {
                 key: 'DEPT2-USER2',
                 type: 'USER',
                 info: {
-                  id: 'urosaria@funwork.io',
+                  id: 2,
+                  email: 'urosaria@funwork.io',
                   position: 'Engineer',
                   securityGrade: 5,
                   deptId: 2
@@ -53,7 +55,8 @@ export default class OrganFakerServer {
 
   static getLoginUser() {
     return {
-      id: 'changhwaoh@funwork.io',
+      id: 1,
+      email: 'changhwaoh@funwork.io',
       position: 'Engineer',
       securityGrade: 0,
       deptId: 2

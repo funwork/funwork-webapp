@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import request from 'superagent';
 import autobind from 'autobind-decorator';
 import { Input, Col } from 'react-bootstrap';
 import OrganTree from './OrganTree';
@@ -19,11 +20,24 @@ export default class Organization extends Component {
   }
 
   loadOrganTreeFromServer() {
-    this.setState({
-      organTree: faker.getTreeData()
-    }, () => {
-      this.setDefaultExpandedKeys();
-    });
+    const treeApiUri = '/api/organization/tree/1';
+    request.get(treeApiUri)
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        if (!err) {
+          this.setState({
+            organTree: [res.body]
+          }, () => {
+            this.setDefaultExpandedKeys();
+          });
+        }
+      });
+
+    //this.setState({
+    //  organTree: faker.getTreeData()
+    //}, () => {
+    //  this.setDefaultExpandedKeys();
+    //});
   }
 
   setDefaultExpandedKeys() {

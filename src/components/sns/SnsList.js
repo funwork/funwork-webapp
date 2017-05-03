@@ -11,7 +11,7 @@ export default class SnsList extends Component {
             snsLists: [
                 {
                     num: 1,
-                    contents: '안녕하세요??? <br /> <a href="#">&기술개발팀</a> <a href="#"><strong>@UROSARIA</strong></a> 입니다. <br /> 금일 PM6시 회사앞 #삼겹살집 에서 #회식 합니다. <br /> 모두모두 참석 바랍니다. <br />',
+                    contents: '안녕하세요??? 1111111<br /> <a href="#">&기술개발팀</a> <a href="#"><strong>@UROSARIA</strong></a> 입니다. <br /> 금일 PM6시 회사앞 #삼겹살집 에서 #회식 합니다. <br /> 모두모두 참석 바랍니다. <br />',
                     userId: 'urosaria',
                     date: '2016-06-03',
                     dept: "기술개발팀",
